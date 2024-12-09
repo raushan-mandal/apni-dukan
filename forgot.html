@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log-in</title>
+  <style>
+    .main {
+      height: 400px;
+      width: 400px;
+      border: 2px solid red;
+      background-image: url(https://thumbs.dreamstime.com/z/isp-internet-service-provider-concept-vector-illustration-isp-internet-service-provider-concept-116715394.jpg);
+      /* background-size: contain; */
+      background-repeat: no-repeat;
+      margin: auto;
+    }
+
+    .signin {
+      /* margin: auto; */
+      margin-top: 35%;
+
+      text-align: center;
+    }
+
+    input {
+      margin: 5px;
+      margin-left: 20px;
+    }
+
+    .sign {
+      margin-left: 23%;
+
+    }
+
+    p {
+      margin-left: 23%;
+      color: red;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="signin">
+      <form action="">
+        E-mail -<input type="email" placeholder="Enter Your E-mail" required><br><button class="sign"
+          onclick="OTP()">Send OTP</button><br><br>
+        Enter OTP -<input type="text" placeholder="Enter OTP" required maxlength="6"><br>
+        <button class="sign"><a href="index.html">Log in</a></button>
+    </div>
+    </form>
+  </div>
+</body>
+<script>
+  function OTP() {
+      alert("OTP sent successfully")
+    }
+</script>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        form {
+            background-color: rgb(241, 237, 237);
+            height: 260px;
+            width: 420px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        h1 {
+            height: 50px;
+            width: 90px;
+            margin: auto;
+        }
+
+        .all {
+            margin-left: 25px;
+        }
+
+        #pass {
+            margin-left: 57px;
+        }
+
+        #username {
+            margin-left: 15px;
+        }
+
+        #submit {
+            margin-left: 170px;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: grey;">
+    <form action="" onsubmit=" return subm()">
+        <h1>sign in</h1>
+        <div class="all"> Enter user name- <input type="email" name="username" id="username" required><br><br>
+            Password- <input type="password" name="password" id="pass"><br><br>
+            conform password- <input type="password" name="password " id="pas" onkeyup="run(this)">
+            <!-- <input type="button" id="show" value="Show" onclick="show()"> -->
+            <button onclick="show()" type="button">Show</button>
+            <p style="color: red;"></p>
+        </div>
+        
+         <button type="submit" id="submit"><a href="index.html" target="_parent">Sign-up</a></button>
+        <input type="reset" onclick="res()" value="Clear">
+        <h3 style="color: red; margin-left: 100px;" class="alert"></h3>
+    </form>
+</body>
+<script>
+    var flag = 1
+    function res() {
+        document.getElementsByTagName('p')[0].innerHTML = ''
+    }
+    function run(elem) {
+        var a = document.getElementById('pass')
+        var b = document.getElementById('pas')
+        var c = a.value
+        var d = b.value
+        if (b.value.length > 0) {
+            if (c != d) {
+                document.getElementsByTagName('p')[0].innerHTML = 'password does not match'
+                flag = 0
+            }
+            else if (c = d) {
+                document.getElementsByTagName('p')[0].innerHTML = ''
+                flag = 1
+            }
+        }
+        else {
+            document.getElementsByTagName('p')[0].innerHTML = ''
+            flag = 0
+        }
+    }
+    var a = document.getElementsByName('password')[0]
+    var c = document.getElementsByName('password')[1]
+    function show() {
+        var b = a.getAttribute('type')
+        if (b == 'password') {
+            a.setAttribute('type', 'text')
+            document.getElementsByTagName('button')[0].innerHTML = 'Hide'
+        }
+        if (b == 'text') {
+            a.setAttribute('type', 'password')
+            document.getElementsByTagName('button')[0].innerHTML = 'show'
+        }
+        var d = c.getAttribute('type')
+        if (d == 'password') {
+            c.setAttribute('type', 'text')
+        }
+        if (d == 'text') {
+            c.setAttribute('type', 'password')
+        }
+    }
+    function subm() {
+        if (flag == 1) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    window.addEventListener('keyup', event => {
+        var iscaps = event.getModifierState('CapsLock');
+        if (iscaps) {
+            document.getElementsByClassName('alert')[0].innerText = 'WARNING! capslock is ON'
+        }
+        else {
+            document.getElementsByClassName('alert')[0].innerText = ''
+        }
+    }
+    )
+</script>
+
+</html>
